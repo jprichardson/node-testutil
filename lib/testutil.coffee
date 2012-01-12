@@ -26,5 +26,5 @@ me.createBuffer = (size) ->
 me.createFileWithData = (filePath, size) ->
   buf = me.createBuffer(size)
   fs.writeFileSync(filePath, buf)
-
+  filePath
 

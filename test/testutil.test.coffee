@@ -41,5 +41,13 @@ describe 'testutil', ->
       buf = fs.readFileSync(filePath)
       T buf.length is 10
 
+    it 'should return the file path of the file created', ->
+      filePath = path.join(path.tempdir(), Date.now() + '')
+      if path.existsSync(filePath)
+        fs.unlinkSync(filePath)
+        
+      filePath2 = util.createFileWithData(filePath, 10)
+      T filePath2 is filePath
+
 
  

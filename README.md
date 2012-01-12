@@ -20,7 +20,7 @@ util = require('testutil')
 ```javascript
 util.createTempDir() //creates a temporary directory in the OS temporary directory. e.g. /tmp/tmpdir-359353928528529/
 buf = util.createBuffer(size) //creates a Buffer filled with random data
-createFileWithData(filePath, size) //creates a file filled with random data 
+filePath = createFileWithData(filePath, size) //creates a file filled with random data 
 ```
 
 ## License
