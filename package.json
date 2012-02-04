@@ -22,7 +22,7 @@
      },
      "devDependencies": {
         "mocha": ">=0.9.0",
-        "coffee-script" : ">=1.0.1",
+        "coffee-script" : ">=1.0.1"
      },
     "main" : "lib/testutil",
     "test": "cake test"
