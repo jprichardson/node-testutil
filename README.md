@@ -1,30 +1,132 @@
 # Node.js: testutil
 
-This module provides methods to aid in testing your Node.js apps.
+This module provides methods to aid in testing your Node.js apps. You probably wouldn't run this in production.
 
 ## Installation
 
     npm install testutil
 
 Make sure that you run the test script to verify that it works on your system.
-Navigate to the directory for the module and run: `make test`
+
+### Test Installation
+
+Navigate to the directory for the module and run: `npm test`
 
 ## Usage
 
 ```javascript
-util = require('testutil')
+testutil = require('testutil')
 ```
 
-## Methods
+### Module Methods
+
+##### createTempDir()
+
+Synchronously creates a temporary directory and returns the path.
 
 ```javascript
-util.createTempDir() //creates a temporary directory in the OS temporary directory. e.g. /tmp/tmpdir-359353928528529/
-buf = util.createBuffer(size) //creates a Buffer filled with random data
-filePath = createFileWithData(filePath, size) //creates a file filled with random data 
+var dirPath = testutil.createTempDir();
 ```
+
+e.g. `/tmp/tmpdir-359353928528529/`
+
+
+
+##### createBuffer(size)
+
+Synchronously creates and returns a buffer of size N filled with random data.
+
+```javascript
+var buffer = testutil.createBuffer(1024); //buffer of 1024 bytes
+```
+
+
+##### createFileWithData(size)
+
+Synchronously creates a file of size N filled with random data. The file path is returned.
+
+```javascript
+var filepath = testutil.createFileWithData(filepath, 1024); 
+```
+
+
+##### fetchTestFiles(dirPath, callback)
+
+Asynchronously fetches all of the files in a specified directory that end in `.test.coffee` or `.test.js`.
+
+```javscript
+testutil.fetchTestFiles('test/', function(files) {
+// do something with test files
+});
+```
+
+You might use this in conjunction with [Mocha](mocha).
+
+
+
+### Global Methods
+
+This modules also creates three global methods that I use in my tests. Again, as stated up top, you shouldn't use this in production code.
+
+##### T() / F()
+
+I like short and concise tests. I also write everything CoffeeScript. Here are the function definitions:
+
+```coffeescript
+T = (v) -> assert(v)
+F = (v) -> assert(!v)
+```
+
+for you JavaScript folks:
+
+```javascript
+T = function(v) { return assert(v); };
+F = function(v) { return assert(!v); };
+```
+
+My CoffeeScript tests might look like this:
+
+```coffeescript
+describe 'SomeClass', ->
+  describe '- ssaySomethingNice()', ->
+    it 'should say something nice', ->
+      T saySomethingNice() == 'hello'
+      F saySomethingNice() == 'i hate you'
+```
+
+easier to visually parse than what a lot of other tests look like:
+
+```coffeescript
+describe 'SomeClass', ->
+  describe '- saySomethingNice()', ->
+    it 'should say something nice', ->
+      saySomethingNice().should.equal('hello')
+      assert.false(saySomethingNice(), 'i hate you')
+```
+
+
+##### TODO(done)
+
+This is really `mocha` exclusive. It's a method that prints `TODO` after your tests.
+
+```javascript
+describe('SomeClass', function(){
+  it('should do something', function(done){
+	TODO(done); return;
+  });
+});
+```
+
+That `return` is necessary after the `TODO`.
+
+
 
 ## License
 
-(The MIT License)
+(The MIT License) See [LICENSE](https://github.com/jprichardson/node-testutil/blob/master/LICENSE) for details.
 
-Copyright (c) 2011 JP Richardson
+Copyright (c) 2011-2012 JP Richardson
+
+[mocha]: http://visionmedia.github.com/mocha/
+
+
