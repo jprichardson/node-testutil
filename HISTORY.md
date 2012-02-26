@@ -1,3 +1,8 @@
+0.1.0 / 2012-02-26
+==================
+* Removed `string` dependency.
+* Added `growl` depenedency.
+
 0.0.3 / 2012-02-03
 ==================
 * Updated README

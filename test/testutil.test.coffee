@@ -4,6 +4,10 @@ fs = require('fs-extra')
 
 log = (s) -> console.log(s)  
 
+endsWith = (s, suffix) ->
+  l = s.length - suffix.length;
+  l >= 0 && s.indexOf(suffix, l) == l;
+
 describe 'testutil', ->
   describe '+ createTempDir()', ->
     it 'should create a directory in the OS temp directory', ->
@@ -48,7 +52,7 @@ describe 'testutil', ->
   describe '+ fetchTestFiles()', ->
     it 'should return the test files in the specified directory', (done) ->
       testutil.fetchTestFiles './', (files) ->
-        T files[0].endsWith('testutil.test.coffee')
+        T endsWith(files[0], 'testutil.test.coffee')
         done()
 
 

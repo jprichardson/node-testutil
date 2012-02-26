@@ -1,7 +1,10 @@
 path = require('path-extra')
 fs = require('fs')
-require('string')
 require('./global')
+
+endsWith = (s, suffix) ->
+  l = s.length - suffix.length;
+  l >= 0 && s.indexOf(suffix, l) == l;
 
 me = module.exports
 
@@ -40,7 +43,7 @@ me.fetchTestFiles = (dir,callback) ->
       if err then file_counter--; return
       if stat.isFile()
         file_counter--
-        if current_dir.endsWith('.test.coffee') or current_dir.endsWith('.test.js')
+        if endsWith(current_dir, '.test.coffee') or endsWith(current_dir, '.test.js')
           testFiles.push(current_dir)
       else if stat.isDirectory()
         file_counter--
