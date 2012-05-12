@@ -1,19 +1,19 @@
 {
     "name" : "testutil", 
-    "version" : "0.1.0",
+    "version" : "0.1.1",
     "description" : "testutil contains methods to aid in automatic testing of your application.",
     "homepage" : [
-        "https://github.com/jprichardson/testutil"
+        "https://github.com/jprichardson/node-testutil"
     ],
     "repository" : {
         "type" : "git", 
-        "url" : "https://github.com/jprichardson/testutil"
+        "url" : "https://github.com/jprichardson/node-testutil"
     },
     "keywords" : ["test","testing","utility", "tdd","bdd","unit"],
     "author" : "JP Richardson <jprichardson@gmail.com>",
     "licenses" : [ {
         "type" : "MIT",
-        "url" : "http://github.com/jprichardson/testutil/raw/master/LICENSE"
+        "url" : "http://github.com/jprichardson/node-testutil/raw/master/LICENSE"
     }],
     "dependencies" : {
         "path-extra": "0.0.x",

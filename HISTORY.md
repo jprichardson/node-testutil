@@ -1,3 +1,7 @@
+0.1.1 / 2012-05-11
+==================
+* Added `exit()` method. (Just an alias for `process.exit()`)
+
 0.1.0 / 2012-02-26
 ==================
 * Removed `string` dependency.
