@@ -1,12 +1,18 @@
-# Node.js: testutil
+Node.js - testutil
+=================
 
 This module provides methods to aid in testing your Node.js apps. You probably wouldn't run this in production.
 
-## Installation
+
+Installation
+------------
 
     npm install testutil
 
 Make sure that you run the test script to verify that it works on your system.
+
+
+
 
 ### Test Installation
 
@@ -103,21 +109,6 @@ describe 'SomeClass', ->
       saySomethingNice().should.equal('hello')
       assert.false(saySomethingNice(), 'i hate you')
 ```
-
-
-##### TODO(done)
-
-This is really `mocha` exclusive. It's a method that prints `TODO` after your tests.
-
-```javascript
-describe('SomeClass', function(){
-  it('should do something', function(done){
-	TODO(done); return;
-  });
-});
-```
-
-That `return` is necessary after the `TODO`.
 
 
 

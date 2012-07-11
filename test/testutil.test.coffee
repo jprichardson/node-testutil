@@ -15,12 +15,12 @@ describe 'testutil', ->
       Date.now = -> 0 #createTempDir uses current unix timestamp to generate directory name
 
       dirName = path.join(path.tempdir(), 'tmpdir-0')
-      if path.existsSync(dirName)
-        fs.rmrfSync(dirName)
+      if fs.existsSync(dirName)
+        fs.removeSync(dirName)
 
       dirName2 = testutil.createTempDir()
       T dirName is dirName2
-      T path.existsSync(dirName)
+      T fs.existsSync(dirName)
 
       Date.now = oldFunc #restore it
 
@@ -32,18 +32,18 @@ describe 'testutil', ->
   describe '+ createFileWithData()', ->
     it 'should create a file specified at by file path filled with random data of size N', ->
       filePath = path.join(path.tempdir(), Date.now() + '')
-      if path.existsSync(filePath)
+      if fs.existsSync(filePath)
         fs.unlinkSync(filePath)
         
       testutil.createFileWithData(filePath, 10)
-      T path.existsSync(filePath)
+      T fs.existsSync(filePath)
         
       buf = fs.readFileSync(filePath)
       T buf.length is 10
 
     it '+ should return the file path of the file created()', ->
       filePath = path.join(path.tempdir(), Date.now() + '')
-      if path.existsSync(filePath)
+      if fs.existsSync(filePath)
         fs.unlinkSync(filePath)
         
       filePath2 = testutil.createFileWithData(filePath, 10)

@@ -1,3 +1,7 @@
+0.2.0 / 2012-07-10
+==================
+* Removed `fs-extra` dependency. Removed `TODO()` global method.
+
 0.1.1 / 2012-05-11
 ==================
 * Added `exit()` method. (Just an alias for `process.exit()`)
