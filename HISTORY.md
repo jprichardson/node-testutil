@@ -1,3 +1,7 @@
+0.2.1 / 2012-08-03
+==================
+* Added global methods TTRUE, TTrue, TFALSE, TFalse as aliases for T/F.
+
 0.2.0 / 2012-07-10
 ==================
 * Removed `fs-extra` dependency. Removed `TODO()` global method.

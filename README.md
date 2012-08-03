@@ -4,6 +4,7 @@ Node.js - testutil
 This module provides methods to aid in testing your Node.js apps. You probably wouldn't run this in production.
 
 
+
 Installation
 ------------
 
@@ -18,11 +19,15 @@ Make sure that you run the test script to verify that it works on your system.
 
 Navigate to the directory for the module and run: `npm test`
 
-## Usage
+
+
+Usage
+-----
 
 ```javascript
 testutil = require('testutil')
 ```
+
 
 ### Module Methods
 
@@ -69,12 +74,11 @@ testutil.fetchTestFiles('test/', function(files) {
 You might use this in conjunction with [Mocha](mocha).
 
 
-
 ### Global Methods
 
 This modules also creates three global methods that I use in my tests. Again, as stated up top, you shouldn't use this in production code.
 
-##### T() / F()
+##### T() / F() / TTRUE() / TFALSE() / TTrue() / TFalse()
 
 I like short and concise tests. I also write everything CoffeeScript. Here are the function definitions:
 
@@ -112,7 +116,14 @@ describe 'SomeClass', ->
 
 
 
-## License
+TODO
+----
+
+* Remove CoffeeScript development dependency.
+
+
+License
+-------
 
 (The MIT License) See [LICENSE](https://github.com/jprichardson/node-testutil/blob/master/LICENSE) for details.
 

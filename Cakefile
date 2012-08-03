@@ -13,7 +13,7 @@ task 'build', 'build lib/ from src/', ->
       console.log "Error building. Code: #{code}"
 
 task 'test', 'test project', (options) ->
-  process.env['NODE_ENV'] = 'testing'
+  process.env['NODE_ENV'] = 'test'
   testutil.fetchTestFiles './test', (files) ->
     files.unshift '--colors'
     mocha = spawn 'mocha', files#, customFds: [0..2]
