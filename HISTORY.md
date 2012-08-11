@@ -1,3 +1,7 @@
+0.2.2 / 2012-08-11
+==================
+* Added `generateTestPath` method.
+
 0.2.1 / 2012-08-03
 ==================
 * Added global methods TTRUE, TTrue, TFALSE, TFalse as aliases for T/F.

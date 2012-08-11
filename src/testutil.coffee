@@ -1,11 +1,17 @@
 path = require('path-extra')
 fs = require('fs')
 require('./global')
+util = require('util')
 
 endsWith = (s, suffix) ->
   l = s.length - suffix.length;
   l >= 0 && s.indexOf(suffix, l) == l;
 
+pad = (number, length=2) ->
+  str = "" + number
+  str = "0" + str  while str.length < length
+  str
+ 
 me = module.exports
 
 me.createTempDir = ->
@@ -13,6 +19,14 @@ me.createTempDir = ->
   dirName = path.join(path.tempdir(), name)
   fs.mkdirSync(dirName)
   dirName
+
+me.generateTestPath = (name) ->
+  now = new Date()
+  p = path.join(path.tempdir(), name)
+  ymd = util.format("%s-%s-%s", pad(now.getFullYear()), pad(now.getMonth() + 1), pad(now.getDate()))
+  hms = util.format("%s-%s-%s", pad(now.getHours()), pad(now.getMinutes()), pad(now.getSeconds()))
+  ds = ymd + '_' + hms
+  path.join(p, ds)
 
 me.createBuffer = (size) ->
   buf = new Buffer(size)

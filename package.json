@@ -1,6 +1,6 @@
 {
     "name" : "testutil", 
-    "version" : "0.2.1",
+    "version" : "0.2.2",
     "description" : "testutil contains methods to aid in automatic testing of your application.",
     "homepage" : [
         "https://github.com/jprichardson/node-testutil"

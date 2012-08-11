@@ -73,6 +73,15 @@ testutil.fetchTestFiles('test/', function(files) {
 
 You might use this in conjunction with [Mocha](mocha).
 
+#### generateTestPath(name) 
+
+Generates a string that you can use for a test path.
+
+```javascript
+var testPath = testutil.generateTestPath('test-mypackage');
+console.log(testPath); // /tmp/test-mypackage/2012-08-04_13-05-11
+```
+
 
 ### Global Methods
 
