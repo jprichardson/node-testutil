@@ -1,4 +1,8 @@
-0.2.3 / 2012-08-11
+0.2.4 / 2012-09-18
+------------------
+* Don't actually delete dir in `createTestDir()`, but delete the files.
+
+0.2.3 / 2012-08-18
 ------------------
 * Added `createTestDir` method.
 

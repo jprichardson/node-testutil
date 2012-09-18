@@ -71,11 +71,13 @@ describe 'testutil', ->
     describe '  when it exists', ->
       it 'should delete the dir and create it', ->
         dir = path.join(path.tempdir(), 'test-myapp')
-        if not fs.existsSync(dir)
-          fs.mkdirSync(dir)
+        rimraf.sync(dir)
+        fs.mkdirSync(dir)
+        fs.writeFileSync(path.join(dir, 'blah'), 'afafaf')
         T fs.existsSync(dir)
         testutil.createTestDir('myapp')
         T fs.existsSync(dir)        
+        T fs.readdirSync(dir).length == 0
 
 
 

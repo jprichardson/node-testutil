@@ -26,9 +26,12 @@ me.createTempDir = ->
 
 me.createTestDir = (app) ->
   dir = path.join(path.tempdir(), 'test-' + app)
-  if fs.existsSync(dir)
-    rimraf.sync(dir)
-  fs.mkdirSync(dir)
+  if fs.existsSync(dir) #don't want to actually delete the dir since we want to recreate
+    files = fs.readdirSync(dir)
+    files.forEach (file) ->
+      rimraf.sync(path.join(dir, file))
+  else
+    fs.mkdirSync(dir)
   dir
 
 me.generateTestPath = (name) ->
