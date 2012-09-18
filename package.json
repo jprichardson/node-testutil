@@ -1,28 +1,38 @@
 {
-    "name" : "testutil", 
-    "version" : "0.2.2",
-    "description" : "testutil contains methods to aid in automatic testing of your application.",
-    "homepage" : [
-        "https://github.com/jprichardson/node-testutil"
-    ],
-    "repository" : {
-        "type" : "git", 
-        "url" : "https://github.com/jprichardson/node-testutil"
-    },
-    "keywords" : ["test","testing","utility", "tdd","bdd","unit"],
-    "author" : "JP Richardson <jprichardson@gmail.com>",
-    "licenses" : [ {
-        "type" : "MIT",
-        "url" : "http://github.com/jprichardson/node-testutil/raw/master/LICENSE"
-    }],
-    "dependencies" : {
-        "path-extra": "0.0.x"
-     },
-     "devDependencies": {
-        "mocha": "1.3.x",
-        "coffee-script" : "1.3.x",
-        "fs-extra": "0.1.x"
-     },
-    "main" : "lib/testutil",
-    "test": "cake test"
+  "name": "testutil",
+  "version": "0.2.3",
+  "description": "testutil contains methods to aid in automatic testing of your application.",
+  "homepage": [
+    "https://github.com/jprichardson/node-testutil"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jprichardson/node-testutil"
+  },
+  "keywords": [
+    "test",
+    "testing",
+    "utility",
+    "tdd",
+    "bdd",
+    "unit"
+  ],
+  "author": "JP Richardson <jprichardson@gmail.com>",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://github.com/jprichardson/node-testutil/raw/master/LICENSE"
+    }
+  ],
+  "dependencies": {
+    "path-extra": "0.0.x",
+    "rimraf": "~2.0.2"
+  },
+  "devDependencies": {
+    "mocha": "1.3.x",
+    "coffee-script": "1.3.x",
+    "fs-extra": "0.1.x"
+  },
+  "main": "lib/testutil",
+  "test": "cake test"
 }

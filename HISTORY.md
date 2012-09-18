@@ -1,26 +1,30 @@
+0.2.3 / 2012-08-11
+------------------
+* Added `createTestDir` method.
+
 0.2.2 / 2012-08-11
-==================
+------------------
 * Added `generateTestPath` method.
 
 0.2.1 / 2012-08-03
-==================
+------------------
 * Added global methods TTRUE, TTrue, TFALSE, TFalse as aliases for T/F.
 
 0.2.0 / 2012-07-10
-==================
+------------------
 * Removed `fs-extra` dependency. Removed `TODO()` global method.
 
 0.1.1 / 2012-05-11
-==================
+------------------
 * Added `exit()` method. (Just an alias for `process.exit()`)
 
 0.1.0 / 2012-02-26
-==================
+------------------
 * Removed `string` dependency.
 * Added `growl` depenedency.
 
 0.0.3 / 2012-02-03
-==================
+------------------
 * Updated README
 * Added module method `fetchTestFiles()`
 * Added global methods: `T()`, `F()`, and `TODO()`
@@ -30,9 +34,9 @@
 * Deleted index.coffee
 
 0.0.2 / 2012-01-12
-==================
+------------------
 * createFileWithData now returns the input filePath
 
 0.0.1 / 2012-01-12
-==================
+------------------
 * Initial release.

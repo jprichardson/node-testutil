@@ -42,6 +42,16 @@ var dirPath = testutil.createTempDir();
 e.g. `/tmp/tmpdir-359353928528529/`
 
 
+##### createTestDir(app)
+
+Synchronously creates a test directory and returns the path. Deletes the directory if it exsists and recreates it.
+
+```javascript
+var dirPath = testutil.createTestDir('myapp');
+```
+
+e.g. `/tmp/test-myapp`
+
 
 ##### createBuffer(size)
 

@@ -2,6 +2,10 @@ path = require('path-extra')
 fs = require('fs')
 require('./global')
 util = require('util')
+rimraf = require('rimraf')
+
+if fs.existsSync == undefined
+  fs.existsSync = path.existsSync 
 
 endsWith = (s, suffix) ->
   l = s.length - suffix.length;
@@ -19,6 +23,13 @@ me.createTempDir = ->
   dirName = path.join(path.tempdir(), name)
   fs.mkdirSync(dirName)
   dirName
+
+me.createTestDir = (app) ->
+  dir = path.join(path.tempdir(), 'test-' + app)
+  if fs.existsSync(dir)
+    rimraf.sync(dir)
+  fs.mkdirSync(dir)
+  dir
 
 me.generateTestPath = (name) ->
   now = new Date()

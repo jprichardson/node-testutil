@@ -1,6 +1,10 @@
 testutil = require('testutil')
 path = require('path-extra')
 fs = require('fs-extra')
+rimraf = require('rimraf')
+
+if fs.existsSync == undefined
+  fs.existsSync = path.existsSync
 
 log = (s) -> console.log(s)  
 
@@ -54,6 +58,36 @@ describe 'testutil', ->
       testutil.fetchTestFiles './', (files) ->
         T endsWith(files[0], 'testutil.test.coffee')
         done()
+
+  describe '+ createTestDir()', ->
+    describe '  when it doesnt exist', ->
+      it 'should create a test dir', ->
+        dir = path.join(path.tempdir(), 'test-myapp')
+        if fs.existsSync(dir)
+          rimraf.sync(dir)
+        F fs.existsSync(dir)
+        testutil.createTestDir('myapp')
+        T fs.existsSync(dir)
+    describe '  when it exists', ->
+      it 'should delete the dir and create it', ->
+        dir = path.join(path.tempdir(), 'test-myapp')
+        if not fs.existsSync(dir)
+          fs.mkdirSync(dir)
+        T fs.existsSync(dir)
+        testutil.createTestDir('myapp')
+        T fs.existsSync(dir)        
+
+
+
+
+
+
+
+
+
+
+
+
 
 
  
