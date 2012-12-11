@@ -1,3 +1,8 @@
+0.3.0 / 2012-12-11
+------------------
+* Removed CoffeeScript.
+* Upgraded `fs-extra` dep.
+
 0.2.4 / 2012-09-18
 ------------------
 * Don't actually delete dir in `createTestDir()`, but delete the files.
