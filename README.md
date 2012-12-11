@@ -135,10 +135,6 @@ describe 'SomeClass', ->
 
 
 
-TODO
-----
-
-* Remove CoffeeScript development dependency.
 
 
 License
