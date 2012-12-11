@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "mocha": "*",
-    "fs-extra": "0.1.x"
+    "fs-extra": "~0.3.2"
   },
   "main": "lib/testutil",
   "test": "cake test"

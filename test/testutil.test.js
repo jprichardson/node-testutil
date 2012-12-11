@@ -88,7 +88,7 @@ describe('testutil', function() {
         var dir;
         dir = path.join(path.tempdir(), 'test-myapp');
         rimraf.sync(dir);
-        fs.mkdirSync(dir);
+        fs.mkdirsSync(dir);
         fs.writeFileSync(path.join(dir, 'blah'), 'afafaf');
         T(fs.existsSync(dir));
         testutil.createTestDir('myapp');
