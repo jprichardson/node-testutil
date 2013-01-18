@@ -1,6 +1,6 @@
 {
   "name": "testutil",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "testutil contains methods to aid in automatic testing of your application.",
   "homepage": [
     "https://github.com/jprichardson/node-testutil"
@@ -33,5 +33,5 @@
     "fs-extra": "~0.3.2"
   },
   "main": "lib/testutil",
-  "test": "cake test"
+  "test": "mocha test"
 }

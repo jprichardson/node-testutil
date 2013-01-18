@@ -92,12 +92,18 @@ describe('testutil', function() {
         fs.mkdirsSync(dir);
         
         fs.writeFileSync(path.join(dir, 'blah'), 'afafaf');
-        T(fs.existsSync(dir));
+        T (fs.existsSync(dir));
         
         testutil.createTestDir('myapp');
-        T(fs.existsSync(dir));
-        T(fs.readdirSync(dir).length === 0);
+        T (fs.existsSync(dir));
+        T (fs.readdirSync(dir).length === 0);
       })
+    })
+  })
+
+  describe('+ md5', function() {
+    it('should compute the md5 of the data', function() {
+      T (testutil.md5('some data') === '1e50210a0202497fb79bc38b6ade6c34')
     })
   })
 })

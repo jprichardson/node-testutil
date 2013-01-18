@@ -1,7 +1,8 @@
 0.4.0 / 2013-01-17
 ------------------
 * Removed `TTrue`, `TFalse`, `TTRUE`, `TFALSE`.
-* 
+* Added `md5(data)` method.
+* Added `EQ` and `NEQ` global methods.
 
 0.3.0 / 2012-12-11
 ------------------
