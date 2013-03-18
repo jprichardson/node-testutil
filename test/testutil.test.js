@@ -1,9 +1,9 @@
 var testutil = require('testutil')
   , path = require('path-extra')
-  , fs = require('fs-extra')
+  , fs = require('fs')
+  , mkdirp = require('mkdirp')
   , rimraf = require('rimraf');
 
-if (!fs.existsSync) fs.existsSync = path.existsSync
 
 endsWith = function(s, suffix) {
   var l;
@@ -71,7 +71,7 @@ describe('testutil', function() {
       it('should delete the dir and create it', function() {
         var dir = path.join(path.tempdir(), 'test-myapp');
         rimraf.sync(dir);
-        fs.mkdirsSync(dir);
+        mkdirp.sync(dir);
         
         fs.writeFileSync(path.join(dir, 'blah'), 'afafaf');
         T (fs.existsSync(dir));
