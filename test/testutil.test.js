@@ -12,24 +12,6 @@ endsWith = function(s, suffix) {
 };
 
 describe('testutil', function() {
-  describe('+ createTempDir()', function() {
-    it('should create a directory in the OS temp directory', function() {
-      var dirName, dirName2, oldFunc;
-      oldFunc = Date.now;
-      Date.now = function() {
-        return 0;
-      };
-      dirName = path.join(path.tempdir(), 'tmpdir-0');
-      if (fs.existsSync(dirName)) {
-        fs.removeSync(dirName);
-      }
-      dirName2 = testutil.createTempDir();
-      T(dirName === dirName2);
-      T(fs.existsSync(dirName));
-      Date.now = oldFunc;
-    })
-  })
-
   describe('+ createBuffer()', function() {
     it('should create a buffer of size N with random data', function() {
       var buf;
