@@ -2,6 +2,9 @@
 ------------------
 * dropped node v0.6 and added v0.10 support
 * removed `exit()` from global.
+* removed `createTempDir()`
+* removed `generateTestPath()`
+* upgrade to latest `rimraf` dep
 
 0.4.0 / 2013-01-17
 ------------------
