@@ -1,3 +1,8 @@
+0.5.0 / 2013-03-18
+------------------
+* dropped node v0.6 and added v0.10 support
+* removed `exit()` from global.
+
 0.4.0 / 2013-01-17
 ------------------
 * Removed `TTrue`, `TFalse`, `TTRUE`, `TFALSE`.
