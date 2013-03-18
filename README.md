@@ -31,20 +31,11 @@ testutil = require('testutil')
 
 ### Module Methods
 
-##### createTempDir()
-
-Synchronously creates a temporary directory and returns the path.
-
-```javascript
-var dirPath = testutil.createTempDir();
-```
-
-e.g. `/tmp/tmpdir-359353928528529/`
 
 
 ##### createTestDir(app)
 
-Synchronously creates a test directory and returns the path. Deletes the directory if it exsists and recreates it.
+Synchronously creates a test directory and returns the path. Deletes the directory if it exists and recreates it.
 
 ```javascript
 var dirPath = testutil.createTestDir('myapp');
