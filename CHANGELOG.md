@@ -1,3 +1,7 @@
+0.5.1 / 2013-04-30
+------------------
+* added `colors` package
+
 0.5.0 / 2013-03-18
 ------------------
 * dropped node v0.6 and added v0.10 support

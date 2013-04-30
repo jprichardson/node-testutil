@@ -47,7 +47,7 @@ describe('testutil', function() {
   describe('+ fetchTestFiles()', function() {
     it('should return the test files in the specified directory', function(done) {
       testutil.fetchTestFiles('./', function(files) {
-        T(endsWith(files[0], 'testutil.test.js'));
+        EQ (files.length, 2)
         done();
       })
     })
