@@ -1,6 +1,8 @@
 Node.js - testutil
 =================
 
+[![build status](https://secure.travis-ci.org/jprichardson/node-testutil.png)](http://travis-ci.org/jprichardson/node-testutil)
+
 This module provides methods to aid in testing your Node.js apps. You probably wouldn't run this in production.
 
 
