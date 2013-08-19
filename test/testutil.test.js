@@ -88,6 +88,12 @@ describe('testutil', function() {
       T (testutil.md5('some data') === '1e50210a0202497fb79bc38b6ade6c34')
     })
   })
+
+  describe('+ shell', function() {
+    it('should exist', function() {
+      T (testutil.shell)
+    })
+  })
 })
 
 
