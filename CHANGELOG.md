@@ -1,3 +1,9 @@
+0.7.0 / 2013-10-29
+------------------
+* refactored `T()`, `F()`, `EQ()`, `NEQ()` into [terst](https://github.com/jprichardson/terst)
+* removed methods `createbuffer()`, `createFileWithData`
+
+
 0.6.0 / 2013-08-19
 ------------------
 * added `shelljs` package
