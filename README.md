@@ -3,23 +3,30 @@ Node.js - testutil
 
 [![build status](https://secure.travis-ci.org/jprichardson/node-testutil.png)](http://travis-ci.org/jprichardson/node-testutil)
 
-This module provides methods to aid in testing your Node.js apps. You probably wouldn't run this in production.
+This module provides methods to aid in testing your Node.js apps.
 
 
 
 Installation
 ------------
 
-    npm install testutil
+    npm install --save-dev testutil
 
 Make sure that you run the test script to verify that it works on your system.
 
 
+Libraries included:
+-------------------
 
+### [colors](https://github.com/marak/colors.js/)
 
-### Test Installation
+It's already global. You don't need to do anything. It's nice to help debug some output as it modifies the string prototype.
 
-Navigate to the directory for the module and run: `npm test`
+### [shelljs](https://github.com/arturadib/shelljs)
+
+```js
+var shell = require('testutil').shelljs
+```
 
 
 
@@ -27,7 +34,7 @@ Usage
 -----
 
 ```javascript
-testutil = require('testutil')
+var testutil = require('testutil')
 ```
 
 
@@ -46,23 +53,6 @@ var dirPath = testutil.createTestDir('myapp');
 e.g. `/tmp/test-myapp`
 
 
-##### createBuffer(size)
-
-Synchronously creates and returns a buffer of size N filled with random data.
-
-```javascript
-var buffer = testutil.createBuffer(1024); //buffer of 1024 bytes
-```
-
-
-##### createFileWithData(size)
-
-Synchronously creates a file of size N filled with random data. The file path is returned.
-
-```javascript
-var filepath = testutil.createFileWithData(filepath, 1024); 
-```
-
 
 ##### fetchTestFiles(dirPath, callback)
 
@@ -76,55 +66,13 @@ testutil.fetchTestFiles('test/', function(files) {
 
 You might use this in conjunction with [Mocha](mocha).
 
-#### generateTestPath(name) 
 
-Generates a string that you can use for a test path.
+#### md5(data)
 
-```javascript
-var testPath = testutil.generateTestPath('test-mypackage');
-console.log(testPath); // /tmp/test-mypackage/2012-08-04_13-05-11
-```
+Synchronously calculates the md5 of the data.
 
 
-### Global Methods
 
-This modules also creates three global methods that I use in my tests. Again, as stated up top, you shouldn't use this in production code.
-
-##### T() / F() / TTRUE() / TFALSE() / TTrue() / TFalse()
-
-I like short and concise tests. I also write everything CoffeeScript. Here are the function definitions:
-
-```coffeescript
-T = (v) -> assert(v)
-F = (v) -> assert(!v)
-```
-
-for you JavaScript folks:
-
-```javascript
-T = function(v) { return assert(v); };
-F = function(v) { return assert(!v); };
-```
-
-My CoffeeScript tests might look like this:
-
-```coffeescript
-describe 'SomeClass', ->
-  describe '- ssaySomethingNice()', ->
-    it 'should say something nice', ->
-      T saySomethingNice() == 'hello'
-      F saySomethingNice() == 'i hate you'
-```
-
-easier to visually parse than what a lot of other tests look like:
-
-```coffeescript
-describe 'SomeClass', ->
-  describe '- saySomethingNice()', ->
-    it 'should say something nice', ->
-      saySomethingNice().should.equal('hello')
-      assert.false(saySomethingNice(), 'i hate you')
-```
 
 
 
@@ -135,7 +83,7 @@ License
 
 (The MIT License) See [LICENSE](https://github.com/jprichardson/node-testutil/blob/master/LICENSE) for details.
 
-Copyright (c) 2011-2012 JP Richardson
+Copyright (c) 2011-2013 JP Richardson
 
 [mocha]: http://visionmedia.github.com/mocha/
 
