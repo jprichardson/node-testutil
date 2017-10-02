@@ -85,6 +85,6 @@ License
 
 Copyright (c) 2011-2013 JP Richardson
 
-[mocha]: http://visionmedia.github.com/mocha/
+[mocha]: http://mochajs.org/
 
 
